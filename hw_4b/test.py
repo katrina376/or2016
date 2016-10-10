@@ -7,6 +7,7 @@ A = [[  1, -5, -4, -3,  0,  0,  0,  0],
 BV = [4,5,6]
 
 import SimplexMethod as sm
-[err, A, BV] = sm.simplex_method(A,BV)
+err, A, BV = sm.simplex_method(A,BV)
 print err[1]
-print 'A = ' + str(A)
+print 'A = ' , str(A)
+print 'BV = ' , str(BV)

@@ -1,5 +1,5 @@
 import numpy as np
-np.seterr(divide='ignore', invalid='ignore')
+np.seterr(all='ignore')
 
 def pivot(A, BV, r, c) :
 	A = np.array(A)
@@ -28,7 +28,7 @@ def check_optimal(A,BV) :
 	rows = len(A)
 	c = find_pivot(A,BV)
 	if (c == -1) :
-		return [A, BV]
+		return A, BV
 	else :
 		R = A[:,rows-1] / A[:,c]
 		r = -1
@@ -39,9 +39,9 @@ def check_optimal(A,BV) :
 			if (not r == -1) and (R[i] < R[r]) and (R[i] > 0):
 				r = i
 		if (r == -1):
-			return [A, BV]
+			return A, BV
 		[A, BV] = pivot(A, BV, r, c)
-		check_optimal(A,BV)
+		return check_optimal(A,BV)
 
 def simplex_method(A, BV) :
 	A = np.array(A)
@@ -52,10 +52,9 @@ def simplex_method(A, BV) :
 	for i in range(1,rows) :
 		if A[i,cols-1] < 0 :
 			err = [True, "Not feasible in initial state, try other methods."]
-			return [err, A, BV]
+			return err, A, BV
 	# check optimal
 	[A, BV] = check_optimal(A, BV)
-	print A
 	err = [False, "The simplex method is finished."]
-	return [err, A, BV]
+	return err, A, BV
 
