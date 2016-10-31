@@ -42,7 +42,7 @@ m.addConstr( ya2 + yb2 + yc2 + w12 + w22 >= 50, "Total demand to Point 2")
 m.addConstr( x1b + x2b <= zb * 60, "Capacity limit of Warehouse B")
 m.addConstr( x1c + x2c <= zc * 70, "Capacity limit of Warehouse C")
 
-m.addConstr( za + zb + zc <= 1, "Site Selection")
+m.addConstr( za + zb + zc == 1, "Site Selection")
 
 m.addConstr( x1a + x2a >= ya1 + ya2, "Continuity of Warehouse A")
 m.addConstr( x1b + x2b >= yb1 + yb2, "Continuity of Warehouse B")
