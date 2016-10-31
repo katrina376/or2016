@@ -6,7 +6,7 @@ x1a = m.addVar(name="From Supply Point 1 to Warehouse A")
 x1b = m.addVar(name="From Supply Point 1 to Warehouse B")
 x1c = m.addVar(name="From Supply Point 1 to Warehouse C")
 x2a = m.addVar(name="From Supply Point 2 to Warehouse A")
-x2b = m.addVar(name="From Supply Point 2 to Warehouse B")g
+x2b = m.addVar(name="From Supply Point 2 to Warehouse B")
 x2c = m.addVar(name="From Supply Point 2 to Warehouse C")
 
 ya1 = m.addVar(name="From Warehouse A to Demand Point 1")
